@@ -11,4 +11,4 @@ class Team(models.Model):
     ratings = models.CharField(max_length=10, choices=STAR_CHOICES)
     
     def __str__(self):
-        return f"{self.name} - {self.designation} - {self.email}"
+        return f"{self.name} - {self.designation}"

@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-f^3+=)nk=98q3!rcryf^kp0cc-ym!m$z*&==5$knln(sgw&7eu
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CORS_ALLOWED_ORIGINS = ["https://travel-tourism-api.onrender.com", "http://127.0.0.1:5500", "https://99travelandtourism.netlify.app"]
-CSRF_TRUSTED_ORIGINS = ["https://travel-tourism-api.onrender.com", "http://127.0.0.1:5500", "https://99travelandtourism.netlify.app"]
+CORS_ALLOWED_ORIGINS = ["https://travelandtourismapi.onrender.com", "http://127.0.0.1:5500", "https://99travelandtourism.netlify.app"]
+CSRF_TRUSTED_ORIGINS = ["https://travelandtourismapi.onrender.com", "http://127.0.0.1:5500", "https://99travelandtourism.netlify.app"]
 CORS_ALLOW_ALL_ORIGINS = True
 
 
@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'account',
     'blog',
     'contact',
     'review',
     'team',
-    'user',
 ]
 
 MIDDLEWARE = [
