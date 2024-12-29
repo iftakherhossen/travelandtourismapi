@@ -6,11 +6,22 @@ from .serializers import AccountSerializer, RegistrationSerializer, LoginSeriali
 from rest_framework.response import Response
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 # Create your views here.
 class AccountViewset(viewsets.ModelViewSet):
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
+    
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            # Restrict write actions to authenticated users
+            permission_classes = [IsAuthenticated]
+        else:
+            # Allow any user to read data (GET)
+            permission_classes = [AllowAny]
+        
+        return [permission() for permission in permission_classes]
     
 class RegistrationApiView(APIView):
     serializer_class = RegistrationSerializer
