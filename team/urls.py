@@ -7,5 +7,5 @@ router = DefaultRouter()
 router.register('', TeamViewset)
 
 urlpatterns = [
-    path('list/', include(router.urls)),
+    path('', include(router.urls)),
 ]
