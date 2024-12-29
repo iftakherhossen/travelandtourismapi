@@ -6,7 +6,7 @@ from .serializers import BlogSerializer
 # Create your views here.
 class BlogViewset(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
+    serializer_class = BlogSerializer 
     
     def get_queryset(self):
         queryset = super().get_queryset()
